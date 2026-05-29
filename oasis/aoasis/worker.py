@@ -783,14 +783,8 @@ def _build_oasis_events(
 
 
 def _standard_native_action(action: str) -> str:
-    if action == "like":
-        return "like_post"
-    if "comment" in action:
-        return "create_comment"
-    if action == "share":
-        return "repost"
-    if action == "story_mention":
-        return "quote_post"
+    # Atherum consumes Instagram-native action names directly for OASIS evidence.
+    # Keep rawAction and action aligned for native Instagram interactions.
     return action
 
 
